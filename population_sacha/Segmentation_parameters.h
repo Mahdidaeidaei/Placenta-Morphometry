@@ -13,11 +13,11 @@ extern const bool bl_clear_results_folder=false;		// Normally keep at false
 
 // Basic parameters
 extern const float Pi_number = 3.1415926f;
-// extern const float Image_resolution = 0.498f; // µm/Pixel --- Carrie
-extern const float Image_resolution = 0.454f; // µm/Pixel --- Anne-Gaelle
+// extern const float Image_resolution = 0.498f; // ï¿½m/Pixel --- Carrie
+extern const float Image_resolution = 0.454f; // ï¿½m/Pixel --- Anne-Gaelle
 //extern const float Absolute_precision = 1/10000.0;	//10^-5
 extern const float Relative_precision = 1/10000.0f;	//10^-5
-extern const float Minimal_villi_radius_microns = 25;	// \mu m
+extern const float Minimal_villi_radius_microns = 50;	// \mu m
 extern const float Minimal_villi_radius_pixels = Minimal_villi_radius_microns / Image_resolution;	// Pixels
 extern const double Minimal_villi_area_pixels = Pi_number * Minimal_villi_radius_pixels * Minimal_villi_radius_pixels;
 extern const float RBC_radius_microns = 3;	// \mu m

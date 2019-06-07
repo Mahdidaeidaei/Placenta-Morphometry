@@ -62,17 +62,19 @@ void statistics_placenta(// std::ofstream& file_txt,
 	// Labeling villous regions
 	//{ // Limitting variables scope
 		// Preparing a binary image for labelin
+		
 	pop::Mat2UI8 bl_img_complete_villous_regions(size_i, size_j);
-	float villi_density=0;
+	double villi_density=0;//edited by Mahdi float -> double
 	for (int i=0; i<size_i; i++)
 		for (int j=0; j<size_j; j++)
 		{
 			bl_img_complete_villous_regions(i,j) = img_3_objects (i,j) <= int_fetal_RBCs_pixel_color;
 			// On the way, calculating the final villi density
-			villi_density+=bl_img_complete_villous_regions(i,j);
+			villi_density+=bl_img_complete_villous_regions(i,j);//eddited by Mahdi villi_density ->counter
+			//bl_img_complete_villous_regions(i,j)*=200;//Added by Mahdi
 		}
-	villi_density/=(size_i*size_j);
-
+	villi_density/=(size_i * size_j);
+    //bl_img_complete_villous_regions.display("test 3");  //Added by Mahdi
 	pop::Mat2UI32 label_img_segment (pop::Processing::clusterToLabel(bl_img_complete_villous_regions, 0));
 	
 	// Calculating the area of each region
